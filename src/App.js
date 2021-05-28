@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Navbar from './components/Navbar';
+import Homepage from "./pages/Homepage";
+import Article from "./pages/Article";
+import Content from "./pages/Content";
+import Community from "./pages/Community";
+import Aboutus from "./pages/Aboutus";
+import { Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Becef Network</h1>
+      <Navbar />
+      <Switch>
+              <Route exact path="/">
+                  <Homepage />
+              </Route>
+              <Route  path="/article">
+                  <Article/>
+              </Route>
+              <Route  path="/content">
+                  <Content/>
+              </Route>
+              <Route  path="/community">
+                  <Community/>
+              </Route>
+              <Route  path="/about">
+                  <Aboutus/>
+              </Route>
+          </Switch>
     </div>
   );
 }
