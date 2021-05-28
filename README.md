@@ -35,4 +35,18 @@ $ git diff
 ```
 $ git add [file]
 ```
+###### staging এবং last file version এরমধ্যে পার্থক্য দেখুন।
+```
+$ git diff --staged
+```
+###### ফাইল Unstages, কিন্তু তার বিষয়বস্তু অপরিবর্তিত রাখুন।
+```
+$ git reset [file]
+```
+###### ফাইলের স্ন্যাপশট ভার্শনের ইতিহাসে সংরক্ষন করুন।
+```
+$ git commit -m"[descriptive message]"
+```
+
+
 
