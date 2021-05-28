@@ -69,4 +69,4 @@ $ git merge [branch-name]
 ```
 $ git branch -d [branch-name]
 ```
-
+(প্রক্রিয়াধীন)
