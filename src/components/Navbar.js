@@ -1,15 +1,28 @@
 import react from 'react';
-import Homepage from "../pages/Homepage";
-import Article from "../pages/Article";
-import Content from "../pages/Content";
-import Community from "../pages/Community";
-import Aboutus from "../pages/Aboutus";
+import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
     return (
-        <nav>
-            navbar
+        <nav className="navbar">
+            <img src="" alt="" />
+            <ul>
+                <Link to="/">
+                    <li>HOME</li>
+                </Link>
+                <Link to="/article">
+                    <li>ARTICLE</li>
+                </Link>
+                <Link to="/community">
+                    <li>COMMUNITY</li>
+                </Link>
+                <Link to="/content">
+                    <li>CONTENT</li>
+                </Link>
+                <Link to="/about">
+                    <li>ABOUT US</li>
+                </Link>
+            </ul>
         </nav>
     );
 };
