@@ -13,7 +13,7 @@ $ git config --global user.email "[email address]"
 
 ### রিপোজিটরি তৈরি
 #### প্রথমবার রিপোসিটোরি তৈরি করলে আগে এই কমান্ড টি টাইপ করুন।
-##### এতে ডিফল্ট রিপোসিটোরি নাম 'master' এর পরিবর্তে 'main' হবে।
+###### এতে ডিফল্ট রিপোসিটোরি নাম 'master' এর পরিবর্তে 'main' হবে।
 
 ```
 $ git config --global init.defaultBranch main
