@@ -24,7 +24,6 @@ footer .footer-top {
 }
 
 footer .footer-top .footer-logo {
-  color: white;
   font-size: 4rem;
   text-align: left;
 }
@@ -33,6 +32,11 @@ footer .footer-top .footer-logo {
   footer .footer-top .footer-logo {
     text-align: center;
   }
+}
+
+footer .footer-top .footer-logo a {
+  text-decoration: none;
+  color: white;
 }
 
 footer .footer-top .footer-form {
@@ -45,14 +49,50 @@ footer .footer-top .footer-form {
   }
 }
 
+footer .footer-top .footer-form .input-email {
+  width: 300px;
+  margin-left: auto;
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  footer .footer-top .footer-form .input-email {
+    margin: 0 auto;
+  }
+}
+
 footer .footer-top .footer-form .input-email input[type="text"] {
   width: 300px;
-  padding: 10px;
-  text-align: center;
+  padding: 10px 20px 10px 40px;
   border: 1px solid #949494;
   outline: none;
   color: white;
   background-color: transparent !important;
+}
+
+footer .footer-top .footer-form .input-email input[type="text"]::-webkit-input-placeholder {
+  text-align: center;
+}
+
+footer .footer-top .footer-form .input-email input[type="text"]:-ms-input-placeholder {
+  text-align: center;
+}
+
+footer .footer-top .footer-form .input-email input[type="text"]::-ms-input-placeholder {
+  text-align: center;
+}
+
+footer .footer-top .footer-form .input-email input[type="text"]::placeholder {
+  text-align: center;
+}
+
+footer .footer-top .footer-form .input-email .email-icon {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  color: #636363;
+  font-size: 22px;
+  padding: 8px;
 }
 
 footer .footer-top .footer-form input[type="submit"] {
@@ -134,7 +174,7 @@ footer .footer-middle .important-link ul li a {
 footer .footer-bottom {
   -webkit-box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.29);
           box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.29);
-  width: 100vw !important;
+  max-width: 100vw !important;
   padding: 10px 0;
   overflow-y: hidden !important;
 }

@@ -18,12 +18,16 @@ footer{
         // justify-content: space-between;
 
         .footer-logo{
-            color: white;
             font-size: 4rem;
             text-align: left ;
 
             @media screen and (max-width:768px) {
                 text-align: center;
+            }
+
+            a{
+                text-decoration: none;
+                color: white;
             }
         }
 
@@ -34,14 +38,37 @@ footer{
                 text-align: center;
             }
 
-            .input-email input[type="text"]{
+            .input-email{
                 width: 300px;
-                padding: 10px;
-                text-align: center;
+                margin-left: auto;
+                position: relative;
+
+                @media screen and (max-width:768px) {
+                    margin: 0 auto;
+                }
+             input[type="text"]{
+                width: 300px;
+                padding: 10px 20px 10px 40px;
+                // text-align: center;
                 border: 1px solid #949494;
                 outline: none;
                 color: white;
                 background-color:transparent !important;
+
+                &::placeholder {
+                    text-align: center;
+                }
+            }
+
+            .email-icon{
+                display: inline-block;
+                position: absolute;
+                left: 0;
+                color: rgb(99, 99, 99);
+                font-size: 22px;
+                padding:8px ;
+            }
+
             }
             input[type="submit"]{
                 width: 300px;
@@ -147,7 +174,7 @@ footer{
 
     .footer-bottom{
         box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.29);
-        width: 100vw !important;
+        max-width: 100vw !important;
         padding:10px 0;
         overflow-y: hidden !important;
 

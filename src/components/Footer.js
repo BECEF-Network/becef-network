@@ -1,5 +1,7 @@
 import React from 'react'
 import './Footer.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faEnvelope } from '@fortawesome/free-regular-svg-icons'
 
 function Footer() {
     return (
@@ -7,7 +9,7 @@ function Footer() {
             <div className="container">
             <div className="footer-top row">
                 <h1 className="footer-logo col-md-6 ">
-                    LOGO
+                    <a href="#">LOGO</a> 
                 </h1>
 
                 {/* Newsletter Form  */}
@@ -15,7 +17,9 @@ function Footer() {
                 <form action="#" className="footer-form col-md-6 text-right">
                     <div className="input-email">
                         <input type="text" placeholder="Enter Your Email"/>
-                        <div className="email-icon"></div>
+                        <div className="email-icon">
+                        <FontAwesomeIcon className="footer-email-icon" icon={faEnvelope} />
+                        </div>
                     </div>
                     <input type="submit" value="Subscribe"/>
                 </form>
@@ -24,7 +28,7 @@ function Footer() {
                 <hr/>
 
             <div className="footer-middle row">
-                <div className="col-lg-4 my-md-0 my-3 footer-nav">
+                <div className="col-lg-4 col-md-6 my-md-0 my-3 footer-nav">
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="#">About</a></li>
@@ -34,7 +38,7 @@ function Footer() {
                     </ul>
                 </div>
                 
-                <div className="col-lg-4 my-md-0 my-3 trending-topics">
+                <div className="col-lg-4 col-md-6 my-md-0 my-3 trending-topics">
                     <div className="title">
                         <h4>Trending Topics</h4>
                     </div>
@@ -47,7 +51,7 @@ function Footer() {
                     </ul>
                 </div>
                 
-                <div className="col-lg-4 my-md-0 my-3 important-link">
+                <div className="col-lg-4 col-md-6 my-md-0 my-3 important-link">
                     <div className="title">
                         <h4>Important Links</h4>
                     </div>
