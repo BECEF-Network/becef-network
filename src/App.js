@@ -1,5 +1,5 @@
 import "./App.css";
-import Navbar from './components/Navbar';
+import Footer from './components/Footer'
 import Homepage from "./pages/Homepage";
 import Article from "./pages/Article";
 import Content from "./pages/Content";
@@ -10,8 +10,8 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   return (
-    <div>
-      <Navbar />
+      <div>
+          
       <Switch>
               <Route exact path="/">
                   <Homepage />
@@ -29,6 +29,9 @@ function App() {
                   <Aboutus/>
               </Route>
           </Switch>
+
+        <Footer/>
+
     </div>
   );
 }
