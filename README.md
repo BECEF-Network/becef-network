@@ -1,70 +1,191 @@
-# Getting Started with Create React App
+# BECEF-NETWORK
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![](git2.jpeg)
+## Member দের contribute করার জন্য GIT CLI cheatsheet 
 
-## Available Scripts
+### টুল কনফিগার
+#### লোকাল রিপোজিটরির জন্য টুল কনফিগার করা
+###### নাম ঠিক করুন যেটা আপনি কমিট ট্রান্সেকশনের সাথে সংযুক্ত করতে চান।
+```
+$ git config --global user.name "[name]"
+```
+###### ইমেইল ঠিক করুন 
+```
+$ git config --global user.email "[email address]"
+```
 
-In the project directory, you can run:
+### রিপোজিটরি তৈরি
+#### প্রথমবার রিপোসিটোরি তৈরি করলে আগে এই কমান্ড টি টাইপ করুন।
+###### এতে ডিফল্ট রিপোসিটোরি নাম 'master' এর পরিবর্তে 'main' হবে।
 
-### `npm start`
+```
+$ git config --global init.defaultBranch main
+```
+#### নতুন রিপোসিটোরি শুরু অথবা একটি বিদ্যমান URL থেকে শুরু করুন।
+###### নির্দিষ্ট নাম দিয়ে একটি নতুন রিপোসিটোরি তৈরি করুন।
+```
+$ git init [project-name]
+```
+###### একটি repository এবং তার সম্পূর্ণ সংস্করণ ইতিহাস ডাউনলোড করুন।
+```
+$ git clone [url]
+``` 
+### পরিবর্তন করা
+#### সম্পাদনা পর্যালোচনা করুন এবং একটি কমিট ট্রান্সেকসন ক্রাফট করুন।
+###### সকল ফাইল লিস্ট করুন যা কমিট করা হবে।
+```
+$ git status
+```
+###### ফাইলগুলোর পার্থক্য দেখুন যেগুলো এখনো staged হয়নি।
+```
+$ git diff
+```
+###### সংস্করনের জন্য প্রস্তুতি ফাইল স্ন্যাপশট করুন।
+```
+$ git add [file]
+```
+###### staging এবং last file version এরমধ্যে পার্থক্য দেখুন।
+```
+$ git diff --staged
+```
+###### ফাইল Unstages, কিন্তু তার বিষয়বস্তু অপরিবর্তিত রাখুন।
+```
+$ git reset [file]
+```
+###### ফাইলের স্ন্যাপশট ভার্শনের ইতিহাসে সংরক্ষন করুন।
+```
+$ git commit -m"[descriptive message]"
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### গ্রুপ পরিবর্তন
+###### বর্তমান রিপোসিটোরির মধ্যে সব লোকাল ব্রাঞ্চ তালিকাভুক্ত করুন।
+```
+$ git branch
+```
+###### একটি নতুন ব্রাঞ্চ তৈরি করুন
+```
+$ git branch [branch-name]
+```
+###### নির্দিষ্ট শাখায় সুইচ এবং আপডেট ওয়ার্কিং ডিরেক্টরি
+```
+$ git checkout [branch-name]
+```
+###### বর্তমান শাখায় নির্দিষ্ট শাখার ইতিহাস একত্রিত করুন
+```
+$ git merge [branch-name]
+```
+###### নির্দিষ্ট শাখা মুছে ফেলে
+```
+$ git branch -d [branch-name]
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### কমিট রিডো করা
+#### ভুল এবংক্রাফট প্রতিস্থাপনের ইতিহাস মুছুন
+###### commit এর পুর্বে locally history remove করুন
+```
+$ git reset [commit]
+```
+###### সব ইতিহাস এবং করা পরিবর্তনগুলি ফিরে নির্দিষ্ট কমিটে অস্বীকার করুন
+```
+$ git reset --hard [commit]
+```
 
-### `npm test`
+### ফাইলের নাম Refactor করুন
+#### 
+###### ওয়ার্কিং ডিরেক্টরি থেকে ফাইল মুছে এবং মুছে ফেলার পর্যায়ে
+```
+$ git rm [file]
+```
+###### ভার্সন নিয়ন্ত্রণ থেকে ফাইল মুছে ফেলা কিন্তু স্থানীয়ভাবে ফাইল সংরক্ষন করা
+```
+$ git rm --cached [file]
+```
+###### ফাইলের নাম পরিবর্তন করা এবং কমিট জন্য এটি প্রস্তুত করুন
+```
+$ git mv [file-original] [file-renamed]
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### ট্র্যাকিং দমন
+#### অস্থায়ী ফাইল এবং পাথ বাদ দিন
+###### A text file named ```.gitignore``` suppresses accidental versioning of files and paths matching the specified patterns
+```
+*.log
+build/
+temp-*
+```
+###### এই প্রকল্পে সব উপেক্ষিত ফাইলের তালিকা তৈরি করুন
+```
+$ git ls-files --others --ignored --exclude-standard
+```
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### ফ্রাগমেন্টস সংরক্ষন
+#### অসম্পূর্ণ পরিবর্তন পুনরুদ্ধার এবং সরিয়ে রাখা
+###### সাময়িকভাবে সব পরিবর্তিত ট্র্যাক ফাইল স্টোর করা
+```
+$ git stash
+```
+###### সাম্প্রতিক stashed ফাইল রিস্টোর করা
+```
+$ git stash pop
+```
+###### সব stashed changesets ফাইলের তালিকা তৈরি করুন
+```
+$ git stash list
+```
+###### সাম্প্রতিক stashed changeset ফাইল বর্জন করুন
+```
+$ git stash drop
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### হিস্টোরি রিভিউ
+#### ব্রাউজ করুন এবং প্রকল্পের ফাইল এর বিবর্তন পরিদর্শন করুন
+###### বর্তমান শাখার জন্য ভার্সন ইতিহাসের তালিকা তৈরি করুন
+```
+$ git log
+```
+###### বর্তমান শাখার জন্য ভার্সন ইতিহাসের তালিকা তৈরি করুন, renames সহ
+```  
+$ git log --follow [file]
+```
+###### দুই শাখার মধ্যে বিষয়বস্তুর পার্থক্য দেখুন
+```
+$ git diff [first-branch]...[second-branch]
+```
+###### নির্দিষ্ট আউটপুট মেটাডেটা এবং বিষয়বস্তু পরিবর্তন কমিট করুন
+```
+$ git show [commit]
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### কমিট রিডো করা
+#### ভুল এবংক্রাফট প্রতিস্থাপনের ইতিহাস মুছুন
+###### commit এর পুর্বে locally history remove করুন
+```
+$ git reset [commit]
+```
+###### সব ইতিহাস এবং করা পরিবর্তনগুলি ফিরে নির্দিষ্ট কমিটে অস্বীকার করুন
+```
+$ git reset --hard [commit]
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### সিঙ্ক্রোনাইজড পরিবর্তনগুলি
+#### একটি দূরবর্তী (URL) নিবন্ধন করুন এবং রিপোসিটোরি ইতিহাস এক্সচেঞ্জ করুন
+###### দূরবর্তী রিপোসিটোরি থেকে সব ইতিহাস ডাউনলোড করুন
+```
+$ git fetch [remote]
+```
+###### বর্তমান স্থানীয় শাখা ও দূরবর্তী শাখা একত্রিত করুন
+```
+$ git merge [remote]/[branch]
+```
+###### সকল লোকাল ব্রাঞ্চ কমিট গিটহাবে আপলোড করুন
+```
+$ git push [remote] [branch]
+```
+###### বুকমার্ক হিস্টোরি ও অন্তর্ভুক্ত পরিবর্তনগুলো ডাউনলোড করুন
+```
+$ git pull
+```
+**(প্রক্রিয়াধীন)**
