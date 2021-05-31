@@ -1,0 +1,78 @@
+@import "./mixin.scss";
+
+.category {
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  &__layer {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5rem 0 7rem 0;
+  }
+  &__title {
+    color: black;
+    text-transform: capitalize;
+    font-size: 1.8rem;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+
+    position: relative;
+    &::after {
+      content: "";
+      top: 2.6rem;
+      left: 4px;
+      position: absolute;
+      border-bottom: 3px solid black;
+      width: 4.5rem;
+    }
+  }
+  &__card {
+    outline: 0 !important;
+    border: none !important;
+    &:hover &-img img {
+      transform: scale(1.1);
+      transition: all 0.3s ease-in;
+    }
+    &-img {
+      overflow: hidden;
+      position: relative;
+      border-radius: 6px;
+      img {
+        transition: all 0.3s ease-in;
+      }
+    }
+    &-body {
+      display: flex;
+      align-items: flex-end;
+      background: rgba(0, 0, 0, 0.3);
+      &--item {
+        transform: translate(0.8rem, -1.2rem);
+      }
+    }
+    &-date {
+      color: white;
+      font-size: 1rem;
+      text-transform: capitalize;
+      font-family: "Lato", sans-serif;
+      font-weight: 400;
+    }
+    &-link {
+      text-decoration: none;
+      color: white !important;
+      font-size: 1.2rem;
+      text-transform: capitalize;
+      font-family: "Lato", sans-serif;
+      font-weight: 700;
+
+      //   min-width: 992px;
+      @include lg-screen {
+        font-size: 1.1rem;
+      }
+
+      //   min-width: 1200px;
+      @include xl-screen {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

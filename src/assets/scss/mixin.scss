@@ -1,0 +1,12 @@
+//Large Screen (min-width: 992)
+@mixin lg-screen {
+  @media screen and (min-width: 992px) {
+    @content;
+  }
+}
+//Xtra Large Screen (min-width: 1200)
+@mixin xl-screen {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
